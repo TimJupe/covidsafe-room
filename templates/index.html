@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sample for Zac</title>
-</head>
-<body>
-{{ acacia_dict.AC1 }}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block building %}
+    Acacia
+{% endblock %}
+
+{%block firstrow %}
+         <div class="card text-black {% if acacia_dict.AC1>=acacia_dict.AC1MAX %} bg-danger {% else %} bg-success {% endif %} mb-3" style="max-width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title">AC1</h5>
+             <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC1MAX }}</p>
+             <p class="card-text">Current Number of People: {{ acacia_dict.AC1 }}</p>
+             </div>
+          </div>
+         <div class="card text-black bg-danger mb-3" style="max-width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title">AC2</h5>
+             <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC2MAX }}</p>
+             <p class="card-text">Current Number of People: {{ acacia_dict.AC2 }}</p>
+             </div>
+          </div>
+          <div class="card text-black bg-success mb-3" style="max-width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title">AC3</h5>
+             <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC3MAX }}</p>
+             <p class="card-text">Current Number of People: {{ acacia_dict.AC3 }}</p>
+             </div>
+          </div>
+{% endblock %}
+
+{%block secondrow %}
+         <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title">AC4</h5>
+             <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC4MAX }}</p>
+             <p class="card-text">Current Number of People: {{ acacia_dict.AC4 }}</p>
+             </div>
+          </div>
+         <div class="card text-black bg-warning mb-3" style="max-width: 18rem;">
+             <div class="card-body">
+             <h5 class="card-title">AC5</h5>
+             <p class="card-text">Max Safe Number of People: {{ acacia_dict.AC5MAX }}</p>
+             <p class="card-text">Current Number of People: {{ acacia_dict.AC5 }}</p>
+             </div>
+          </div>
+{% endblock %}
